@@ -1,3 +1,8 @@
+/*
+    ReadController.ino - Example for ArduinoNESController library
+    Created by Aaron Shappell
+*/
+
 #include <"ArduinoNESController.h">
 
 //Define pins
