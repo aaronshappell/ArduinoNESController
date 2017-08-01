@@ -18,6 +18,18 @@ ArduinoNESController::ArduinoNESController(int _latchPin, int _clockPin, int _da
     pinMode(dataPin, INPUT);
 }
 
+bool ArduinoNESController::isButtonPressed(int button){
+    return (buttons & (1 << button)) & (~(buttonsOld & (1 << button)));
+}
+
+bool ArduinoNESController::isButtonDown(int button){
+    return buttons & (1 << button);
+}
+
+bool ArduinoNESController::isButtonUp(int button){
+    return ~(buttons & (1 << button));
+}
+
 void ArduinoNESController::update(){
     buttonsOld = buttons;
 
@@ -36,18 +48,6 @@ void ArduinoNESController::update(){
 
 byte ArduinoNESController::getButtons(){
     return buttons;
-}
-
-bool ArduinoNESController::isButtonPressed(int button){
-    return (buttons & (1 << button)) & (~(buttonsOld & (1 << button)));
-}
-
-bool ArduinoNESController::isButtonDown(int button){
-    return buttons & (1 << button);
-}
-
-bool ArduinoNESController::isButtonUp(int button){
-    return ~(buttons & (1 << button));
 }
 
 bool ArduinoNESController::isButtonPressedA(){

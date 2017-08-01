@@ -20,13 +20,13 @@ class ArduinoNESController{
         int dataPin;
         byte buttons;
         byte buttonsOld;
+        bool isButtonPressed(int button);
+        bool isButtonDown(int button);
+        bool isButtonUp(int button);
     public:
         ArduinoNESController(int latchPin, int clockPin, int dataPin);
         void update();
         byte getButtons();
-        bool isButtonPressed(int button);
-        bool isButtonDown(int button);
-        bool isButtonUp(int button);
         bool isButtonPressedA();
         bool isButtonPressedB();
         bool isButtonPressedSelect();
