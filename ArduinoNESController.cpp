@@ -6,15 +6,15 @@
 
 #include <ArduinoNESController.h>
 
-ArduinoNESController::ArduinoNESController(int _clockPin, int _latchPin, int _dataPin){
-    clockPin = _clockPin;
+ArduinoNESController::ArduinoNESController(int _latchPin, int _clockPin, int _dataPin){
     latchPin = _latchPin;
+    clockPin = _clockPin;
     dataPin = _dataPin;
     buttons = B00000000;
     buttonsOld = B00000000;
 
-    pinMode(clockPin, OUTPUT);
     pinMode(latchPin, OUTPUT);
+    pinMode(clockPin, OUTPUT);
     pinMode(dataPin, INPUT);
 }
 

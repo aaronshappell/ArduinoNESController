@@ -15,13 +15,13 @@
 
 class ArduinoNESController{
     private:
-        int clockPin;
         int latchPin;
+        int clockPin;
         int dataPin;
         byte buttons;
         byte buttonsOld;
     public:
-        ArduinoNESController(int clockPin, int latchPin, int dataPin);
+        ArduinoNESController(int latchPin, int clockPin, int dataPin);
         void update();
         byte getButtons();
         bool isButtonPressed(int button);
