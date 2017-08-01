@@ -1,6 +1,9 @@
 ArduinoNESController    KEYWORD1
 udpate  KEYWORD2
 getButtons  KEYWORD2
+isButtonPressed KEYWORD2
+isButtonDown    KEYWORD2
+isButtonUp  KEYWORD2
 isButtonPressedA    KEYWORD2
 isButtonPressedB    KEYWORD2
 isButtonPressedSelect   KEYWORD2

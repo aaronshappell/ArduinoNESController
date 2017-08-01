@@ -18,6 +18,9 @@ class ArduinoNESController{
         ArduinoNESController(int clockPin, int latchPin, int dataPin);
         void update();
         byte getButtons();
+        bool isButtonPressed(int button);
+        bool isButtonDown(int button);
+        bool isButtonUp(int button);
         bool isButtonPressedA();
         bool isButtonPressedB();
         bool isButtonPressedSelect();

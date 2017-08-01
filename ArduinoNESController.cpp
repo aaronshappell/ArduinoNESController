@@ -19,6 +19,18 @@ byte ArduinoNESController::getButtons(){
     return buttons;
 }
 
+bool ArduinoNESController::isButtonPressed(int button){
+    return (buttons & (1 << button)) & (~(buttonsOld & (1 << button)));
+}
+
+bool ArduinoNESController::isButtonDown(int button){
+    return buttons & (1 << button);
+}
+
+bool ArduinoNESController::isButtonUp(int button){
+    return ~(buttons & (1 << button));
+}
+
 bool ArduinoNESController::isButtonPressedA(){
 }
 
