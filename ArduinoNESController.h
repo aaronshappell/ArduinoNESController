@@ -51,6 +51,6 @@ class ArduinoNESController{
         bool isButtonUpDown();
         bool isButtonUpLeft();
         bool isButtonUpRight();
-}
+};
 
 #endif

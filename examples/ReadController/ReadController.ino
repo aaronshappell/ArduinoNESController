@@ -3,7 +3,7 @@
     Created by Aaron Shappell
 */
 
-#include <"ArduinoNESController.h">
+#include <ArduinoNESController.h>
 
 //Define pins
 int latchPin = 9;
