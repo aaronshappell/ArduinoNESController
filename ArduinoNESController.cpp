@@ -1,3 +1,9 @@
+/*
+    ArduinoNesController.cpp - An Arduino library to read input from NES controllers.
+    NES timings from https://tresi.github.io/nes/
+    Created by Aaron Shappell
+*/
+
 #include <ArduinoNESController.h>
 
 ArduinoNESController::ArduinoNESController(int _clockPin, int _latchPin, int _dataPin){
@@ -13,6 +19,19 @@ ArduinoNESController::ArduinoNESController(int _clockPin, int _latchPin, int _da
 }
 
 void ArduinoNESController::update(){
+    buttonsOld = buttons;
+
+    digitalWrite(latchPin, HIGH);
+    delayMicroseconds(12);
+    digitalWrite(latchPin, LOW);
+    delayMicroseconds(6);
+    for(int i = 0; i < 8; i++){
+        buttons &= ~(1 << i) | (~(digitalRead(dataPin)) << i);
+        digitalWrite(clockPin, HIGH);
+        delayMicroseconds(6);
+        digitalWrite(clockPin, LOW);
+        delayMicroseconds(6);
+    }
 }
 
 byte ArduinoNESController::getButtons(){

@@ -1,3 +1,9 @@
+/*
+    ArduinoNesController.h - An Arduino library to read input from NES controllers.
+    NES timings from https://tresi.github.io/nes/
+    Created by Aaron Shappell
+*/
+
 #ifndef ArduinoNESController_h
 #define ArduinoNESController_h
 
