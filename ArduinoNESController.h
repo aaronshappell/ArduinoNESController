@@ -24,7 +24,7 @@ class ArduinoNESController{
         bool isButtonDown(int button);
         bool isButtonUp(int button);
     public:
-        ArduinoNESController(int latchPin, int clockPin, int dataPin);
+        ArduinoNESController(int _latchPin, int _clockPin, int _dataPin);
         void update();
         byte getButtons();
         bool isButtonPressedA();
